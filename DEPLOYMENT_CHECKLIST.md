@@ -192,6 +192,43 @@ vercel --prod
 # Add environment variables in Vercel dashboard
 ```
 
+Recommended Vercel settings:
+
+- **Project Root**: `apps/web`
+- **Build Command**: `pnpm --filter web build`
+- **Output Directory**: leave default (Next.js `.next`)
+- **Environment Variables (set at Project → Settings → Environment Variables)**:
+  - `DATABASE_URL` = your production Postgres connection string
+  - `RESEND_API_KEY` = (optional) resend API key to enable email sending
+  - `NEXT_PUBLIC_APP_URL` = https://signals.namastebostonhomes.com
+  - `MLS_SF_FEED_URL`, `MLS_CC_FEED_URL`, `MLS_MF_FEED_URL` = production feed URLs
+
+DNS / Subdomain setup:
+
+- Add a CNAME record for `signals` pointing to `cname.vercel-dns.com` (or follow Vercel's provided records in the dashboard).
+- After DNS propagation, add `signals.namastebostonhomes.com` to the Vercel project's Domains list.
+
+Auth / Cookie sharing between subdomains:
+
+- If you want `namastebostonhomes.com` login to authenticate `signals.namastebostonhomes.com`, ensure your auth cookie is set with domain `.namastebostonhomes.com` (note leading dot). Example in NextAuth-like configuration:
+
+```js
+// Example cookie config
+cookies: {
+  sessionToken: {
+    name: 'next-auth.session-token',
+    options: {
+      domain: '.namastebostonhomes.com',
+      httpOnly: true,
+      sameSite: 'lax',
+      secure: true,
+    }
+  }
+}
+```
+
+If you need, I can add a small middleware to validate incoming cookies and redirect to login on the main site when missing.
+
 **Option B: Docker**
 
 ```bash
