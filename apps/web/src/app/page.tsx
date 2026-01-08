@@ -366,11 +366,12 @@ export default async function HomePage({ searchParams }: PageProps) {
 				</div>
 			) : (
 				<div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-12">
-					<p className="text-yellow-800">
-						No opportunities available yet. Run{' '}
-						<code className="bg-yellow-100 px-2 py-1 rounded">pnpm compute-signals</code> to
-						generate signals.
-					</p>
+						<p className="text-yellow-800">
+							We don't have any opportunities right now — data may be syncing.
+							If you're running the app locally, you can generate signals with{' '}
+							<code className="bg-yellow-100 px-2 py-1 rounded">pnpm compute-signals</code>.
+							Otherwise please check back shortly.
+						</p>
 				</div>
 			)}
 

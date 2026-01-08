@@ -68,6 +68,10 @@ async function getTowns(): Promise<string[]> {
 }
 
 export default async function AlertsPage() {
+  const cookieStore = cookies();
+  const existingUserId = cookieStore.get('user_id')?.value;
+  const isAuthenticated = !!existingUserId && !existingUserId.startsWith('anon_');
+
   const userId = getOrCreateUserId();
   const savedSearches = await getSavedSearches(userId);
   const availableTowns = await getTowns();
@@ -80,6 +84,22 @@ export default async function AlertsPage() {
           Get notified when properties match your criteria with market signals like price drops,
           underpriced listings, or hot properties moving fast.
         </p>
+        {!isAuthenticated && (
+          <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-between">
+            <div>
+              <p className="font-medium text-blue-900">Sign in to save alerts and receive notifications</p>
+              <p className="text-sm text-blue-800">Signing in lets you manage alerts across devices.</p>
+            </div>
+            <div>
+              <a
+                href={`https://namastebostonhomes.com/login?returnTo=${encodeURIComponent('/alerts')}`}
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              >
+                Sign in
+              </a>
+            </div>
+          </div>
+        )}
         <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
           <h3 className="font-medium text-blue-900 mb-2">💡 How Alerts Work</h3>
           <ul className="text-sm text-blue-800 space-y-1">

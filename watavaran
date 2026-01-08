@@ -1,0 +1,8 @@
+RESEND_API_KEY=re_jR6ucccW_CcmQvMioJRXJ2vpQyWDLZAdX
+MLS_SF_FEED_URL=https://idx.mlspin.com/idx.asp?user=2K7zB9t1nMtTtnFNBPt57r2dWjyY9LtsYtzNhRUtu9sRKD5rHZhNFoEmNR2c7vZ5ssDxI5POLfUDRqO0oDxnAyn&proptype=SF
+
+MLS_CC_FEED_URL=https://idx.mlspin.com/idx.asp?user=2K7zB9t1nMtTtnFNBPt57r2dWjyY9LtsYtzNhRUtu9sRKD5rHZhNFoEmNR2c7vZ5ssDxI5POLfUDRqO0oDxnAyn&proptype=CC
+
+MLS_MF_FEED_URL=https://idx.mlspin.com/idx.asp?user=2K7zB9t1nMtTtnFNBPt57r2dWjyY9LtsYtzNhRUtu9sRKD5rHZhNFoEmNR2c7vZ5ssDxI5POLfUDRqO0oDxnAyn&proptype=MF
+
+DATABASE_URL=postgresql://postgres:M3ra-task26@db.zkyltxfaqfuphikxzgjy.supabase.co:5432/postgres
