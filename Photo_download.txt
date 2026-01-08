@@ -1,0 +1,9 @@
+Photo Downloading
+
+Listing photos are stored in JPG format and are referenced by MLS number. A listing may have up to 42 photos, numbered sequentially, with the first/main photo being photo # 0. A photo may be downloaded in one of three sizes: 1024 x 768, 600 x 450, or 512 x 400.
+
+To download a listing photo, use the following formula to construct the URL of a specific photo file:
+URL=http://media.mlspin.com/photo.aspx?mls=MLS #&n=photo #&w=image width&h=image height
+
+For example, this is the URL of the largest JPG image of the second photo for MLS # 73026808: https://media.mlspin.com/photo.aspx?mls=73026808&n=1&w=1024&h=768
+

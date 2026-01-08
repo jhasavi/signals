@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run type-check for web package (fail fast)
+pnpm --filter web run type-check || exit 1
+
+# Run lint-staged on staged files
+npx --no-install lint-staged

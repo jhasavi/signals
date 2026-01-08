@@ -1,0 +1,17 @@
+{
+  "name": "@signals/notifications",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "send-alerts": "tsx src/send-alerts.ts"
+  },
+  "dependencies": {
+    "db": "workspace:*",
+    "resend": "^4.0.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

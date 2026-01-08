@@ -1,0 +1,10 @@
+.next
+node_modules
+dist
+coverage
+public
+**/*.css
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.svg
