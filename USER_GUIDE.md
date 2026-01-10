@@ -356,7 +356,7 @@ Each signal card shows:
 **Solution**:
 
 ```bash
-cd /Users/sanjeevjha/signals
+cd ~/signals
 pnpm ingest  # Re-ingest with correct mappings
 ./START_DEV.sh  # Restart dev server
 ```

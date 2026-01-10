@@ -69,9 +69,9 @@ pnpm send-alerts
 
 ```cron
 # /etc/crontab or user crontab
-0 6 * * * cd /Users/sanjeevjha/signals && pnpm ingest >> /tmp/signals-ingest.log 2>&1
-30 6 * * * cd /Users/sanjeevjha/signals && pnpm compute-signals >> /tmp/signals-compute.log 2>&1
-0 9 * * * cd /Users/sanjeevjha/signals && pnpm send-alerts >> /tmp/signals-alerts.log 2>&1
+0 6 * * * cd ~/signals && pnpm ingest >> /tmp/signals-ingest.log 2>&1
+30 6 * * * cd ~/signals && pnpm compute-signals >> /tmp/signals-compute.log 2>&1
+0 9 * * * cd ~/signals && pnpm send-alerts >> /tmp/signals-alerts.log 2>&1
 ```
 
 ---
