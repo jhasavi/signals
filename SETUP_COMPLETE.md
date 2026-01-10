@@ -91,7 +91,7 @@ pkill -f "next dev"
 **Restart the web server:**
 
 ```bash
-cd /Users/sanjeevjha/signals
+cd ~/signals
 ./START_DEV.sh
 # or
 export $(cat .env | xargs) && pnpm dev
